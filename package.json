@@ -1,0 +1,15 @@
+{
+  "name": "elaminendiaye-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site personnel d'El Amine Ndiaye, consultant C4D et entrepreneuriat ICC (statique, bilingue FR/EN)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo 'site statique, rien a compiler'"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}

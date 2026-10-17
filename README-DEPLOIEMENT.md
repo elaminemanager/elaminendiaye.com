@@ -21,7 +21,24 @@ public_html/
   404.html                                    Page d'erreur
 ```
 
-## 2. Mise en ligne (hPanel)
+## 2. Mise en ligne : trois méthodes selon votre offre Hostinger
+
+### 2a. Hébergement "application web Node.js" (écran "Déployez votre application web Node.js")
+
+Le dépôt contient `server.js` et `package.json` : le site se déploie comme une application Node sans configuration.
+1. Cliquez sur "Connectez-vous avec GitHub" (ou collez l'URL du dépôt public `https://github.com/elaminemanager/elaminendiaye.com`).
+2. Choisissez le dépôt `elaminendiaye.com`, branche `main`.
+3. Commande de build : laisser vide (ou `npm run build`). Commande de démarrage : `npm start`. Version Node : 18 ou plus.
+4. Déployez. Chaque push sur `main` redéploie automatiquement.
+5. Rattachez le domaine elaminendiaye.com à l'application dans les paramètres de celle-ci (Domaines).
+
+### 2b. Hébergement web classique avec Git (hPanel > Sites web > Gérer > Avancé > Git)
+
+1. Dépôt : `https://github.com/elaminemanager/elaminendiaye.com.git`, branche `main`, répertoire vide (déploiement dans `public_html`).
+2. Supprimez d'abord `default.php` de `public_html` s'il existe, puis Créer et Déployer.
+3. Copiez l'URL Webhook affichée et ajoutez-la dans GitHub (Settings > Webhooks) pour un déploiement automatique à chaque modification.
+
+### 2c. Hébergement web classique, envoi manuel du zip (hPanel > Gestionnaire de fichiers)
 
 1. Connectez-vous à hPanel, puis Sites web > Gérer (sur elaminendiaye.com).
 2. Menu Fichiers > Gestionnaire de fichiers.
@@ -30,7 +47,7 @@ public_html/
 5. Clic droit sur le zip > Extraire, dans `public_html`. Vérifiez que `index.html` se trouve bien directement dans `public_html` (pas dans un sous-dossier `site/`). Si c'est le cas, déplacez tout le contenu d'un niveau vers le haut.
 6. Supprimez le zip.
 
-Alternative : FTP (FileZilla) avec les identifiants de hPanel > Fichiers > Comptes FTP, en envoyant le contenu du dossier `site/` dans `public_html`.
+Alternative à 2c : FTP (FileZilla) avec les identifiants de hPanel > Fichiers > Comptes FTP, en envoyant le contenu du dossier `site/` dans `public_html`.
 
 ## 3. Domaine et HTTPS
 
